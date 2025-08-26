@@ -18,6 +18,7 @@
 /public/storage
 /storage/*.key
 /storage/pail
+/storage/docker/*
 /vendor
 /storage/docker/db/*.sock
 Homestead.json

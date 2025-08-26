@@ -11,7 +11,10 @@ RUN apt-get update && apt-get install -y \
     unzip \
     pkg-config \
     libzip-dev \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+    libicu-dev \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
+
 
 # Add NodeSource repository for Node.js 16
 RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \
@@ -25,7 +28,7 @@ RUN node -v && npm -v
 RUN npm install -g npm@8
 
 # Install PHP extensions
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip soap
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip soap fileinfo intl
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer

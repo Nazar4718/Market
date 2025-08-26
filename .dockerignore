@@ -1,0 +1,4 @@
+storage/docker/db/*
+storage/logs/*
+vendor/*
+node_modules/*
