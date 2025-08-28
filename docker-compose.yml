@@ -24,6 +24,7 @@ services:
         container_name: market-app
         restart: unless-stopped
         working_dir: /var/www/
+        user: "${UID}:${GID}"
         volumes:
             - ./:/var/www
             - ./docker/php/extend-php.ini:/usr/local/etc/php/conf.d/extend-php.ini

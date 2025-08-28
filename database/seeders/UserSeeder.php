@@ -16,6 +16,7 @@ class UserSeeder extends Seeder
             ->count(40)
             ->create([
                 'password' => 'test1234',
+                'is_admin' => true,
             ]);
     }
 }
